@@ -1,0 +1,25 @@
+/* Add this style to change the color of selected seats */
+.selected {
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.seat-row {
+  display: flex;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

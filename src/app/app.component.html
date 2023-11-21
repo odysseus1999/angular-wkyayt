@@ -1,0 +1,23 @@
+<!-- Container to display the seat rows -->
+<div class="container">
+  <!-- Loop through rows -->
+  <div *ngFor="let row of rows" class="seat-row">
+    <!-- Loop through seat numbers in the row -->
+    <div *ngFor="let seatNumber of getSeatsInRow(row)" class="seat" [class.selected]="isSeatSelected(seatNumber)">
+      <!-- Display seat number -->
+      {{ seatNumber }}
+      <!-- Display 'R' if the seat is selected -->
+      <span *ngIf="isSeatSelected(seatNumber)">R</span>
+    </div>
+  </div>
+</div>
+
+<!-- Section to input number of seats and reserve button -->
+<div>
+  <!-- Label for the input field -->
+  <label for="numSeats">Number of Seats to Reserve:</label>
+  <!-- Input field for the number of seats to reserve -->
+  <input type="number" id="numSeats" [(ngModel)]="numSeats" min="1" max="7" />
+  <!-- Button to trigger the reserveSeats function -->
+  <button (click)="reserveSeats()">Reserve Seats</button>
+</div>
